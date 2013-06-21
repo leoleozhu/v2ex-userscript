@@ -8,7 +8,7 @@
 // @include	https://*.v2ex.com/?tab=*
 // @include	http://*.v2ex.com/go/*
 // @include	https://*.v2ex.com/go/*
-// @version     0.1
+// @version     0.1.1
 // ==/UserScript==
 
 var w = unsafeWindow;
@@ -32,7 +32,7 @@ $(function(){
           var ignore = $('<a href="#" style="float:right">忽略主题</a>');
 
           ignore.click(function(){
-              var t = cell.find('.item_title a').attr('href');
+              var t = cell.find('.item_title a,.item_hot_topic_title a').attr('href');
               console.log('ignoring '+t);
               $.get(t).done(function(html){
                   var m = /\/ignore\/topic\/\d+\?once=\d+/.exec(html)
