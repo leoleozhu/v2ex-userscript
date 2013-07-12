@@ -2,13 +2,13 @@
 // @name        v2ex-ignore-topic-home
 // @namespace   http://github.com/leoleozhu
 // @description Ignore v2ex topics on homepage
-// @include	http://*.v2ex.com/
-// @include	https://*.v2ex.com/
-// @include	http://*.v2ex.com/?tab=*
-// @include	https://*.v2ex.com/?tab=*
-// @include	http://*.v2ex.com/go/*
-// @include	https://*.v2ex.com/go/*
-// @version     0.1.1
+// @include	*://*.v2ex.com/
+// @include	*://v2ex.com/
+// @include	*://*.v2ex.com/?tab=*
+// @include	*://v2ex.com/?tab=*
+// @include	*://*.v2ex.com/go/*
+// @include	*://v2ex.com/go/*
+// @version     0.1.2
 // ==/UserScript==
 
 var w = unsafeWindow;
