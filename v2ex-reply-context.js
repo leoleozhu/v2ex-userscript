@@ -20,11 +20,12 @@ String.prototype.format = String.prototype.f = function() {
 
 $(function(){
     $('.reply_content [href*="/member/"]').click(function(){
+        var username = $(this).text();
         var user_href = ($(this).attr('href'));
         var this_cell = $(this).parents('.cell,.inner');
 
         // check the quoted text is already loaded, if so toggle display and return false
-        var quoted = (this_cell.find('.quoted'));
+        var quoted = (this_cell.find('.quoted[data-author="{0}"]'.format(username)));
         if (quoted.length !== 0)
         {
             quoted.toggle();
@@ -42,7 +43,7 @@ $(function(){
         {
             // found quoted text and display it
             var content = (target_cell.find('.reply_content').html());
-            var content_div = $('<div class="quoted">{0}</div>'.format(content))
+            var content_div = $('<div class="quoted" data-author="{0}"><b>{0}：</b><br/><p>{1}</p></div>'.format(username, content))
                 .css('border', '1px dashed #888')
                 .css('border-radius', '6px')
                 .css('margin-top', '6px')
